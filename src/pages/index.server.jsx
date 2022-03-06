@@ -14,6 +14,7 @@ import FeaturedCollection from '../components/FeaturedCollection';
 import ProductCard from '../components/ProductCard';
 import Welcome from '../components/Welcome.server';
 import {Suspense} from 'react';
+import JustGsap from '../components/JustGsap.client';
 
 export default function Index({country = {isoCode: 'US'}}) {
   return (
@@ -22,6 +23,7 @@ export default function Index({country = {isoCode: 'US'}}) {
         <SeoForHomepage />
       </Suspense>
       <div className="relative mb-12">
+        <JustGsap />
         <Welcome />
         <Suspense fallback={<BoxFallback />}>
           <FeaturedProductsBox country={country} />
