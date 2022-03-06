@@ -1,5 +1,5 @@
 export default {
-  storeDomain: 'hydrogen-preview.myshopify.com',
-  storefrontToken: '3b580e70970c4528da70c98e097c2fa0',
+  storeDomain: 'yzy-supply-store.myshopify.com',
+  storefrontToken: '1cbcc75803292ad281b2068a014e0d63',
   storefrontApiVersion: '2022-01',
 };
