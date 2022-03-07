@@ -9,7 +9,7 @@ import gql from 'graphql-tag';
 
 import Header from './Header.client';
 import Footer from './Footer.server';
-import Cart from './Cart.client';
+import Cart from './Cart.client'; 
 import {Suspense} from 'react';
 
 /**
@@ -44,11 +44,11 @@ export default function Layout({children, hero}) {
           <Header collections={collections} storeName={storeName} />
           <Cart />
         </Suspense>
-        <main role="main" id="mainContent" className="relative bg-gray-50">
+        <main role="main" id="mainContent" className="relative">
           {hero}
-          <div className="mx-auto max-w-7xl p-4 md:py-5 md:px-8">
-            {children}
-          </div>
+          {/* TODO: remove bottom padding on the PDP page. the elements gets cropped at the bottom when you drag them down
+          Not sure if that will be taken care of here.  */}
+          <div className="mx-auto overflow-hidden">{children}</div>
         </main>
         <Footer collection={collections[0]} product={products[0]} />
       </div>

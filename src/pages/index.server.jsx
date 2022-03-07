@@ -14,25 +14,29 @@ import FeaturedCollection from '../components/FeaturedCollection';
 import ProductCard from '../components/ProductCard';
 import Welcome from '../components/Welcome.server';
 import {Suspense} from 'react';
-import JustGsap from '../components/JustGsap.client';
+import Carousel from '../components/Canvas.client';
 
 export default function Index({country = {isoCode: 'US'}}) {
   return (
-    <Layout hero={<GradientBackground />}>
-      <Suspense fallback={null}>
-        <SeoForHomepage />
-      </Suspense>
-      <div className="relative mb-12">
-        <JustGsap />
-        <Welcome />
-        <Suspense fallback={<BoxFallback />}>
-          <FeaturedProductsBox country={country} />
-        </Suspense>
-        <Suspense fallback={<BoxFallback />}>
-          <FeaturedCollectionBox country={country} />
-        </Suspense>
-      </div>
-    </Layout>
+    // <Layout hero={<GradientBackground />}>
+    //   <Suspense fallback={null}>
+    //     <SeoForHomepage />
+    //   </Suspense>
+    //   <div className="relative mb-12">
+    //     <Welcome />
+    //     <p>Hellos</p>
+    //     <Suspense fallback={<BoxFallback />}>
+    //       <FeaturedProductsBox country={country} />
+    //     </Suspense>
+    //     <Suspense fallback={<BoxFallback />}>
+    //       <FeaturedCollectionBox country={country} />
+    //     </Suspense>
+    //   </div>
+    // </Layout>
+    <div className="h-screen w-screen flex flex-col items-center justify-center">
+      <Carousel />
+
+    </div>
   );
 }
 
@@ -81,7 +85,7 @@ function FeaturedProductsBox({country}) {
     : null;
 
   return (
-    <div className="bg-white p-12 shadow-xl rounded-xl mb-10">
+    <div className=" p-12 shadow-xl rounded-xl mb-10">
       {featuredProductsCollection ? (
         <>
           <div className="flex justify-between items-center mb-8 text-md font-medium">
@@ -137,7 +141,7 @@ function FeaturedCollectionBox({country}) {
 function GradientBackground() {
   return (
     <div className="fixed top-0 w-full h-3/5 overflow-hidden">
-      <div className="absolute w-full h-full bg-gradient-to-t from-gray-50 z-10" />
+      <div className="absolute w-full h-full z-10" />
 
       <svg
         viewBox="0 0 960 743"

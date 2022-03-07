@@ -23,7 +23,7 @@ function DocsButton({url, label}) {
     <a
       href={url}
       target="_blank"
-      className="bg-white shadow py-2 px-5 rounded-full inline-flex items-center hover:opacity-80"
+      className=" shadow py-2 px-5 rounded-full inline-flex items-center hover:opacity-80"
       rel="noreferrer"
     >
       {label}
@@ -34,7 +34,7 @@ function DocsButton({url, label}) {
 
 function BoxFallback() {
   return (
-    <div className="bg-white p-12 shadow-xl rounded-xl text-gray-900 h-60"></div>
+    <div className=" p-12 shadow-xl rounded-xl text-gray-900 h-60"></div>
   );
 }
 
